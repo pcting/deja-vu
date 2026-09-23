@@ -208,6 +208,7 @@ func TestInstallOpencodePlugin(t *testing.T) {
 	home := t.TempDir()
 	t.Setenv("HOME", home)
 	t.Setenv("USERPROFILE", home)
+	t.Setenv("DEJA_OPENCODE_MAJOR", "2")
 	r, err := installOpencodePlugin("/opt/deja", false)
 	if err != nil || r.Action != "created" {
 		t.Fatalf("install: %v %v", r, err)

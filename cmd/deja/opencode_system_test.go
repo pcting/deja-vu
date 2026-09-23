@@ -17,6 +17,9 @@ func TestOpencodePluginDoesNotAppendASecondSystemBlock(t *testing.T) {
 	t.Setenv("HOME", home)
 	t.Setenv("USERPROFILE", home)
 	t.Setenv("XDG_CONFIG_HOME", filepath.Join(home, ".config"))
+	// The shape is picked from the installed opencode, and the test is about
+	// the 2.x one.
+	t.Setenv("DEJA_OPENCODE_MAJOR", "2")
 
 	if _, err := installOpencodePlugin("/usr/local/bin/deja", false); err != nil {
 		t.Fatal(err)
